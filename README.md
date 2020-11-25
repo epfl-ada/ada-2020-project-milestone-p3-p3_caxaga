@@ -1,6 +1,6 @@
 1. Title
 
-2: Abstract
+2. Abstract
 A 150 word description of the project idea, goals, datasets used. What's the motivation behind your project? How do you propose to extend the analysis from the paper? What story would you like to tell, and why? 
 
 3. Research Questions
