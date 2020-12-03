@@ -1,0 +1,6 @@
+data/
+.idea/
+*.DS_Store
+
+# Notebook Checkpoints
+.ipynb_checkpoints/
