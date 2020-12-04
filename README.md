@@ -64,3 +64,14 @@ As in the previous homework, all team members like to be involved in every task.
 ## 9. Open questions within the team
 * Does London organize nutritional prevention campaigns for its inhabitants? (cooking activities, workshops in schools, ...)
 * Can we extend the nutrition awareness program to other British cities? 
+
+## 10. TO DO
+*[ ] Plot les corrélation pr chaque nutrition variable
+*[ ] PCA pr voir si on fait K-mean
+*[ ] Clustering pr essayer de voir si on déter des trends
+*[ ] Attribuer un nutriscore
+*[ ] Split en training et test
+*[ ] Régression: prédire nutriscore à partir des well being
+	*[ ] Plusieurs méthodes --> choisir celle avec loss function 
+	*[ ] sélectionner les variables utiles
+*[ ] Tester notre régression
