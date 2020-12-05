@@ -1,6 +1,7 @@
 import math
 import numpy as np
 from IPython.core.display import display
+import pandas as pd
 
 a_nutrients = ['energy_tot', 'saturate', 'salt', 'sugar']
 c_nutrients = ['f_fruit_veg', 'fibre', 'protein']
@@ -30,84 +31,75 @@ def calculate_nutripoints_A(grocery_data_row):
     if grocery_data_row['energy_tot']:
         energy_tot_kj = convert_kcal_to_joules(convert_to_100g(grocery_data_row['energy_tot'], weight))
         # print('energy_tot_kj', energy_tot_kj)
-        # if energy_tot_kj <= 335:
-        #     a = 0
-        # elif energy_tot_kj <= 670:
-        #     a = 1
-        # elif energy_tot_kj <= 1005:
-        #     a = 2
-        # elif energy_tot_kj <= 1340:
-        #     a = 3
-        # elif energy_tot_kj <= 1675:
-        #     a = 4
-        # elif energy_tot_kj <= 2010:
-        #     a = 5
-        # elif energy_tot_kj <= 2345:
-        #     a = 6
-        # elif energy_tot_kj <= 2680:
-        #     a = 7
-        # elif energy_tot_kj <= 3015:
-        #     a = 8
-        # elif energy_tot_kj <= 3350:
-        #     a = 9
-        # else:
-        #     a = 10
+        if energy_tot_kj <= 2058:
+            a = 0
+        elif energy_tot_kj <= 2090.6:
+            a = 1
+        elif energy_tot_kj <= 2123.2:
+            a = 2
+        elif energy_tot_kj <= 2155.8:
+            a = 3
+        elif energy_tot_kj <= 2188.4:
+            a = 4
+        elif energy_tot_kj <= 2221:
+            a = 5
+        else:
+            a = 6
 
     if grocery_data_row['sugar']:
         sugar = convert_to_100g(grocery_data_row['sugar'], weight)
         # print('sugar', sugar)
-        # if sugar <= 4.5:
-        #     b = 0
-        # elif sugar <= 9:
-        #     b = 1
-        # elif sugar <= 13.5:
-        #     b = 2
-        # elif sugar <= 18:
-        #     b = 3
-        # elif sugar <= 22.5:
-        #     b = 4
-        # elif sugar <= 27:
-        #     b = 5
-        # elif sugar <= 31:
-        #     b = 6
-        # elif sugar <= 36:
-        #     b = 7
-        # elif sugar <= 40:
-        #     b = 8
-        # elif sugar <= 45:
-        #     b = 9
-        # else:
-        #     b = 10
+        if sugar <= 24.35:
+            b = 0
+        elif sugar <= 26.576:
+            b = 1
+        elif sugar <= 28.682:
+            b = 2
+        elif sugar <= 30.848:
+             b = 3
+        elif sugar <= 33.014:
+             b = 4
+        elif sugar <= 35.18:
+             b = 5
+        else: 
+             b = 6
 
     if grocery_data_row['saturate']:
         saturate = convert_to_100g(grocery_data_row['saturate'], weight)
         # c = np.clip(math.floor(saturate), 0, 10)
+        if saturate <= 7.79:
+                c = 0
+        elif saturate <= 8.566:
+            c= 1
+        elif saturate <= 9.342:
+             c = 2
+        elif saturate <= 10.118:
+             c = 3
+        elif saturate <= 10.894:
+             c = 4
+        elif saturate <= 11.67:
+             c = 5
+        else: 
+             c = 6
+
 
     if grocery_data_row['salt']:
         sodium = salt_to_sodium(convert_to_100g(grocery_data_row['salt'], weight))
         # print('sodium', sodium)
-        # if sodium <= 90:
-        #     d = 0
-        # elif sodium <= 180:
-        #     d = 1
-        # elif sodium <= 270:
-        #     d = 2
-        # elif sodium <= 360:
-        #     d = 3
-        # elif sodium <= 450:
-        #     d = 4
-        # elif sodium <= 540:
-        #     d = 5
-        # elif sodium <= 630:
-        #     d = 6
-        # elif sodium <= 720:
-        #     d = 7
-        # elif sodium <= 810:
-        #     d = 8
-        # elif sodium <= 800:
-        #     d = 9
-        # else:
-        #     d = 10
+        if sodium <= 535.73:
+             d = 0
+        elif sodium <= 591.588:
+             d = 1
+        elif sodium <= 647.446:
+             d = 2
+        elif sodium <=703.304:
+             d = 3
+        elif sodium <= 759.162:
+             d = 4
+        elif sodium <= 815.02:
+             d = 5
+        else:
+             d = 6
 
     # print('protein:', grocery_data_row['protein'], convert_to_100g(grocery_data_row['protein'], weight))
     # print('fibre:', grocery_data_row['fibre'], convert_to_100g(grocery_data_row['fibre'], weight))
@@ -115,8 +107,8 @@ def calculate_nutripoints_A(grocery_data_row):
     # print('carbs:', grocery_data_row['carb'], convert_to_100g(grocery_data_row['carb'], weight))
     # print('salt:', grocery_data_row['salt'], convert_to_100g(grocery_data_row['salt'], weight))
 
-    # return a + b + c + d
-    return energy_tot_kj + sugar + saturate + sodium
+    return a + b + c + d
+    #return energy_tot_kj , sugar , saturate , sodium
 
 
 def calculate_nutripoints_C(grocery_data_row):
@@ -126,47 +118,57 @@ def calculate_nutripoints_C(grocery_data_row):
 
     if grocery_data_row['fibre']:
         fibre = convert_to_100g(grocery_data_row['fibre'], weight)
-        # if fibre <= 0.7:
-        #     a = 0
-        # elif fibre <= 1.4:
-        #     a = 1
-        # elif fibre <= 2.1:
-        #     a = 2
-        # elif fibre <= 2.8:
-        #     a = 3
-        # elif fibre <= 3.5:
-        #     a = 4
-        # else:
-        #     a = 5
+        if fibre <= 4.02:
+             a = 0
+        elif fibre <= 4.364:
+             a = 0.5
+        elif fibre <= 4.658:
+             a = 1
+        elif fibre <= 4.952:
+             a = 1.5
+        elif fibre <= 5.246:
+             a = 2
+        elif fibre <= 5.54:
+             a = 2.5
+        else:
+             a = 3
 
     if grocery_data_row['protein']:
         protein = convert_to_100g(grocery_data_row['protein'], weight)
-        # if protein <= 1.6:
-        #     b = 0
-        # elif protein <= 3.2:
-        #     b = 1
-        # elif protein <= 4.8:
-        #     b = 2
-        # elif protein <= 6.4:
-        #     b = 3
-        # elif protein <= 8:
-        #     b = 4
-        # else:
-        #     b = 5
+        if protein <= 11.715:
+            b = 0
+        elif protein <= 13.036:
+             b = 0.5
+        elif protein <= 14.357:
+             b = 1
+        elif protein <= 15.678:
+             b = 1.5
+        elif protein <= 16.999:
+             b = 2
+        elif protein <= 18.32:
+             b = 2.5
+        else:
+             b = 3
 
     if grocery_data_row['f_fruit_veg']:
 
         fruit = grocery_data_row['f_fruit_veg'] * 100
-        # if fruit <= 40:
-        #     c = 0
-        # elif fruit <= 60:
-        #     c = 1
-        # elif fruit <= 80:
-        #     c = 2
-        # else:
-        #     c = 5
-    # return a + b + c
-    return fibre + protein + fruit
+        if fruit <= 21.76:
+             c = 0
+        elif fruit <= 25.24:
+             c = 0.5
+        elif fruit <= 28.72:
+             c = 1
+        elif fruit <= 32.2:
+             c = 1.5
+        elif fruit <= 35.68:
+             c = 2
+        elif fruit <= 39.16:
+             c = 2.5
+        else:
+             c = 3
+    return a + b + c
+    #return [fibre , protein , fruit]
 
 
 def calculate_nutripoints(grocery_data_row):
