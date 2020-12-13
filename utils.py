@@ -49,7 +49,7 @@ def calculate_nutripoints_A(grocery_data_row, min_data, max_data):
         interval_sugar = (max_sugar - min_sugar) / 6
 
         for i in range(1, 7):
-            if sugar <= min_sugar + i * min_sugar:
+            if sugar <= min_sugar + i * interval_sugar:
                 b = i - 1
                 break
 
