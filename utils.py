@@ -10,20 +10,31 @@ NUTRIENTS = ['fibre', 'protein', 'carb', 'fat', 'salt']
 
 
 def salt_to_sodium(salt):
+    """
+    Convert salt to sodium
+    Source: https://foodwatch.com.au/blog/measures-and-conversions/item/how-to-convert-sodium-to-salt-and-salt-to-sodium.html
+    """
     return salt / 2.5 * 1000
 
 
 def convert_kcal_to_joules(energy):
+    """
+    Convert energy in kcal to joules
+    """
     return energy * 4.184
 
 
 def convert_to_100g(nutrient_weight, total_weight):
+    """
+    Convert mean nutrient weight to nutrient weight per 100 grams
+    """
     return nutrient_weight / total_weight * 100
 
 
-# df['nutri_score'] = df.apply(calculate_nutrional_score, axis=1)
-
 def calculate_nutripoints_A(grocery_data_row, min_data, max_data):
+    """
+    Compute the nutripoints of the 'negative' nutrients (marked as A)
+    """
     weight = grocery_data_row[NUTRIENTS].sum()
     # print('weight:', weight)
     """Calculate the nutritional score"""
@@ -88,6 +99,9 @@ def calculate_nutripoints_A(grocery_data_row, min_data, max_data):
 
 
 def calculate_nutripoints_C(grocery_data_row, min_data, max_data):
+    """
+    Compute the nutripoints of the 'positive' nutrients (marked as C).
+    """
     a = b = c = 0
 
     weight = grocery_data_row[NUTRIENTS].sum()
@@ -126,8 +140,10 @@ def calculate_nutripoints_C(grocery_data_row, min_data, max_data):
                 break
 
     return a + b + c
-    # return [fibre , protein , fruit]
 
 
 def calculate_nutripoints(grocery_data_row, min_data, max_data):
+    """
+    Compute the nutripoints for an area.
+    """
     return calculate_nutripoints_A(grocery_data_row, min_data, max_data) - calculate_nutripoints_C(grocery_data_row, min_data, max_data)
