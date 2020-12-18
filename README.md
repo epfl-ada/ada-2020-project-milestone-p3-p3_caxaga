@@ -1,4 +1,4 @@
-# Milestone P3: Creative Extension - Tesco Dataset
+# Milestone P4: Creative Extension - Tesco Dataset
 
 ## 1. Title
 
@@ -12,7 +12,7 @@ The idea is to study the consumption of different nutrients based on well-being 
 
 * Can we predict nutritional patterns in an unknown area given publicly available data related to well-being?
 * Which well-being factors are highly correlated with food consumption and therefore are worth being targeted when trying to improve food habits in an area? 
-* How can we explain when well being scores are the same for different nutritional values?
+* How can we explain when well-being scores are the same for different nutritional values?
 * How can we use these predictions to make better recommendations to help the population of an area improve its health?
 
 ## 4. Proposed dataset
@@ -50,7 +50,6 @@ As we know the happiness score at the borough scale, we obtained a dataset givin
 * Logistic regression
 * Support vector machine
 * Decision tree, random forest
-* Neural network (TBD)
 
 ### Validation
 
