@@ -6,7 +6,7 @@
 
 ## 2. Abstract
 
-The idea is to study the consumption of different nutrients based on well-being improvement data as well as predicting dietary patterns for other areas for which we have indicators of well-being. When talking about well-being, we refer to both objective aspects (financial, health, family data) and subjective well-being (happiness). The ultimate goal is to better target people likely to be affected by diseases related to unhealthy food consumption in order to give them nutritional recommendations and predict nutritional properties in a given area to adapt the products proposed to the consumers. We will try to find a correlation between nutritional habits and well-being as well as the identification of sub-groups of criteria (financial, education, etc.) particularly linked to nutrition. Then, a regression model will be implemented to predict dietary patterns based on well-being measures. Our analysis will rely on the dataset “London ward well-being probability scores,” which uses 12 measures to calculate the well-being scores as well the Tesco datasets provided. We will link those two datasets to a happiness score obtained per borough that will be adapted to the ward scale.  We will use cross-validation to assess the validity of our predictions.
+The idea is to study the consumption of different nutrients based on well-being data as well as predicting dietary patterns for other areas for which we have indicators of well-being. When talking about well-being, we refer to both objective aspects (financial, health, family data) and subjective well-being (happiness). The ultimate goal is to better target people likely to be affected by diseases related to unhealthy food consumption in order to give them nutritional recommendations and predict nutritional properties in a given area to adapt the products proposed to the consumers. We will try to find a correlation between nutritional habits and well-being as well as the identification of sub-groups of criteria (financial, education, etc.) particularly linked to nutrition. Then, a regression model will be implemented to predict dietary patterns based on well-being measures. Our analysis will rely on the dataset “London ward well-being probability scores,” which uses 12 measures to calculate the well-being scores as well the Tesco datasets provided. We will link those two datasets to a happiness score obtained per borough that will be adapted to the ward scale.  We will use cross-validation to assess the validity of our predictions.
 
 ## 3. Research Questions
 
@@ -86,11 +86,11 @@ We will organize the next weeks as follows:
 
 As in the previous homework, all team members like to be involved in every task. Thus, we mention the person that will lead the subsections of our analysis, but all of us will contribute to each of them. 
 
-## 8. Questions for TAs
+#### Final organization within the team
 
-* Are we allowed to deviate a bit from our original plan according to the results we will get during the observational studies? We know that we are a bit ambitious through our methods. However, depending on the results we will get throughout the initial part of the project, we will adapt our plan to make it feasible.
-
-## 9. Open questions within the team
-
-* Does London organize nutritional prevention campaigns for its inhabitants? (cooking activities, workshops in schools, ...)
-* Can we extend the nutrition awareness program to other British cities?
+* Data Story - *Together*
+* Video - Agathe
+* Main Analysis - *Together*
+* Nutritional Analysis - Camille
+* Housing Analysis - Xavi
+* Fast-Food Analysis - Agathe
